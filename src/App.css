@@ -1,38 +1,200 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+
+
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+
+}
+
+/* NAVBAR STYLING */
+
+/* .navbrand {
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  font-style: italic;
+} */
+
+.navbar {
+  padding: 0.6rem 1rem;
+  background-color: rgba(6, 12, 46, 0.404);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar .grid-container {
+
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  list-style: none;
+  justify-content: space-around;
+  align-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar ul li {
   color: white;
+  text-align: center;
+  background-color: rgb(28, 156, 124);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.7rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* USERS CHOICE SECTION */
+
+.user-choice-section, .bot-choice-section {
+  background-color: rgba(238, 245, 239, 0.041);
+  padding: 0.8rem 2rem;
+  text-align:center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bot-choice-section {
+  background-color: rgba(238, 241, 216, 0.048);
+  margin-top: 1rem;
+}
+
+.user-choice-section h4, .bot-choice-section h4 {
+  color: white;
+  font-weight: 300;
+}
+
+.buttons-section {
+
+  margin: 0.8rem 0;
+
+
+}
+
+.choice {
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  margin: 0.3rem 0.3rem;
+  color:rgba(39, 50, 112, 0.863);
+  border-radius:0.2rem;
+  border: 1px solid grey;
+}
+
+.choice:hover {
+  background-color: rgb(228, 255, 184);
+  transform: scale(1.02);
+  transition: 0.4s;
+  
+}
+
+
+/* DECISION SECTION */
+
+.decision-section {
+  margin-top:1rem;
+  padding: 1rem 2rem;
+
+
+  background: #00F260;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+  text-align: center;
+}
+
+.decision-section h4 {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.767);
+  padding: 0.2rem 0.2rem;
+}
+
+.decision-section button {
+  margin-top: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid #1b1a1abe;
+  background-color: rgb(177, 210, 236);
+}
+
+.decision-section button:hover {
+  background-color: rgb(228, 255, 184);
+  transform: scale(1.01);
+  transition: 0.3s;
+  transform: scale(1.03);
+}
+
+
+/* USER VS BOT CHOICE & CONCLUSION SECTION */
+
+.results-section {
+  width: 100%;
+
+  background: #5C258D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.user-bot-choices {
+  display:flex;
+  justify-content: space-around;
+  margin: 0.6rem 0.5rem;
+  height: auto;
+}
+
+.user-bot-choices li {
+  list-style: none;
+  color: rgba(255, 255, 255, 0.836);
+  font-weight: 400;
+  
+  
+}
+
+.conclusion h1 {
+
+  padding: 0.4rem 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+
+}
+
+.reload {
+  margin-top: 1rem;
+  background-color: rgba(37, 37, 44, 0.062);
+  padding: 1.3rem 2rem;
+  text-align: center;
+  margin: auto;
+}
+.reload a {
+  padding: 0.2rem 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: italic;
+  color:#00F260;
+  text-decoration: none;
+}
+
+.reload a:hover {
+  font-size: large;
+  color:#ff7f58;
+  transition:0.3s
+  
+  ;
 }
