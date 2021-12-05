@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
-import game from '../check'
 
 
-function Results({userMove, botMove}) {
+function Results({userMove, botMove, gameState}) {
 
     //   let [gameState,setGameState] = useState("");
 
@@ -26,6 +23,7 @@ function Results({userMove, botMove}) {
             </div>
 
             <div className="conclusion">
+                <h1>{ gameState.current }</h1>
             </div>
         </div>
 

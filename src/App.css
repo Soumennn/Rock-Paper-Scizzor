@@ -172,7 +172,8 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;
-
+  color: white;
+  text-shadow: 2px 1px 6px rgba(243, 241, 223, 0.719);
 }
 
 .reload {

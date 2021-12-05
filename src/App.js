@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import './App.css'
 import Botchoice from './Components/Botchoice';
@@ -13,19 +13,19 @@ function App() {
   let [userMove,setUserMove] = useState("");
   let [botMove,setBotMove] = useState("");
   let [loadRes, setLoadRes] = useState("");
-  let [gameState,setGameState] = useState("");
+  let gameState = useRef(null);
 
 
   useEffect(() => {
-          setTimeout(() => {
-            console.log(userMove, botMove);
-            
-            if (userMove === " scizzor " && botMove === " scizzor ") {
-              console.log("draw");
-            }
-
-          }, 1000);
-      },[userMove,botMove])
+    setTimeout(() => {
+  
+      let res = game(userMove.trim(),botMove.trim());
+      // console.log(res)
+      gameState.current = res;
+      // console.log(gameState.current);
+      
+    }, 1000);
+  },[userMove,botMove])
 
 
   const getUserMove = (move) => {
@@ -57,11 +57,15 @@ function App() {
       <Navbar/>
       <Userchoice getUserMove={getUserMove} />
       <Botchoice getBotMove={getBotMove} />
-      <Decision getLoadRes={getLoadRes} />
+      <Decision getLoadRes={getLoadRes} botMove={botMove} />
 
-      {loadRes === "show" 
-        ? <Results userMove={userMove} botMove={botMove} />
-        : null
+      {loadRes === "show" ? (
+        <Results 
+          userMove={userMove} 
+          botMove={botMove} 
+          gameState={gameState} 
+        />
+      ): null
       }
 
 

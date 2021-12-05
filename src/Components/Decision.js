@@ -1,26 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 function Decision(props) {
 
     let [on,setOn] = useState(false);
 
-    
-    useEffect(()=> {
-    })
+    // useEffect(() => {
 
+    // },[props.gameState.current])
 
+   
     const loadingHandler = () => {
 
-        setOn(() => {
-            on = !on;
+        
+            if(props.botMove !== "") {
 
-            setTimeout(() => {
-                let onButton = "show";
-                props.getLoadRes(onButton);
+            setOn(() => {
+                on = !on;
+
+                setTimeout(() => {
+                    let onButton = "show";
+                    props.getLoadRes(onButton);
+                })
+
             })
 
-        })
+        }
+        
+        
     }
 
     
@@ -32,7 +39,7 @@ function Decision(props) {
             <h4>  Exited ? Click here to view the results : </h4>
 
             <button 
-            onClick={loadingHandler}> 
+            onClick={ loadingHandler }> 
             Results
             </button>
 
