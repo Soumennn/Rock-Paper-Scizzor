@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-import { Choices } from '../Components/Userchoice'
 
-// export const botArrayChoice = ['ROCK','PAPER','SCIZZOR'];
+export const botArrChoice = ['rock','paper','scizzor'];
 
 function Botchoice(props) {
 
@@ -10,9 +9,9 @@ function Botchoice(props) {
     let [botChoices, setBotChoices] = useState("");
 
     const botClickHandler = ()=> {
-        if(botChoices === "") {
+        if(props.botMove === "") {
         setBotChoices(()=> {
-          botChoices = Choices[Math.floor(Math.random()* Choices.length)]
+          botChoices = botArrChoice[Math.floor(Math.random()* botArrChoice.length)]
         //   console.log(botChoices);
           setTimeout(()=> {
             props.getBotMove(botChoices);

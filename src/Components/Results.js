@@ -2,16 +2,24 @@
 
 function Results({userMove, botMove, gameState}) {
 
-    //   let [gameState,setGameState] = useState("");
+    // const reloadHandler = () => {
+    //     let reload = "";
 
-    //   useEffect(() => {
-    //       setTimeout(() => {
+    //     setTimeout(() => {
+    //         getUserMove(reload);
+    //         getBotMove(reload);
+    //         getLoadRes(reload);
+    //         getGameState(reload);
+    //     },1000)
 
-    //         let res = game(userMove, botMove);
-    //         console.log(res);
+    //     setTimeout(() => {
+    //         console.log(userMove);
+    //         console.log(botMove);
+    //     },1500)
+        
+        
 
-    //       }, 2000);
-    //   })
+    // }
 
 
     return (
@@ -26,11 +34,7 @@ function Results({userMove, botMove, gameState}) {
                 <h1>{ gameState.current }</h1>
             </div>
         </div>
-
-        <div className="reload">
-        <a href="/"> Play Again ? </a>
-        </div>
-        
+     
         </>
     )
 

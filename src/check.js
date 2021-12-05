@@ -1,4 +1,4 @@
-import { Choices } from './Components/Userchoice'
+import { botArrChoice } from './Components/Botchoice'
 // ["ROCK","PAPER","SCIZZOR"]
     
 
@@ -6,25 +6,25 @@ import { Choices } from './Components/Userchoice'
     {
 
         if (userMove === botMove)
-            return ("draw");
+            return ("WHOA ! ITS A DRAW");
 
-        if (userMove === Choices[0] && botMove === Choices[1])
-            return ("bot wins");
+        if (userMove === botArrChoice[0] && botMove === botArrChoice[1])
+            return ("OOPS! BOT WINS");
  
-        else if (userMove === Choices[1] && botMove === Choices[0]) 
-            return ("you win");
+        else if (userMove === botArrChoice[1] && botMove === botArrChoice[0]) 
+            return ("HURRAY , YOU WIN !");
 
-        if (userMove === Choices[0] && botMove === Choices[2])
-            return ("you win");
+        if (userMove === botArrChoice[0] && botMove === botArrChoice[2])
+            return ("HURRAY , YOU WIN !");
 
-        else if (userMove === Choices[2] && botMove === Choices[0])
-            return ("bot wins");
+        else if (userMove === botArrChoice[2] && botMove === botArrChoice[0])
+            return ("OOPS! BOT WINS");
 
-        if (userMove === Choices[1] && botMove === Choices[2])
-            return ("bot wins");
+        if (userMove === botArrChoice[1] && botMove === botArrChoice[2])
+            return ("OOPS! BOT WINS");
 
-        else if (userMove === Choices[2] && botMove === Choices[1])
-            return ("you win");
+        else if (userMove === botArrChoice[2] && botMove === botArrChoice[1])
+            return ("HURRAY , YOU WIN !");
     }
 
 
